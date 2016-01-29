@@ -1,4 +1,7 @@
 /* add custom styles */
+body{
+  margin: 0 auto;
+}
 .center {
   text-align: center;
 }
@@ -11,6 +14,14 @@
 
 .half-margin{
   margin-top: 50%;
+}
+
+.no-margin{
+  margin: 0 auto;
+}
+
+.cara{
+  height: 500px;
 }
 
 footer {
