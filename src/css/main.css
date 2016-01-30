@@ -1,7 +1,9 @@
 /* add custom styles */
 body{
   margin: 0 auto;
+  background-color: slategrey;
 }
+
 .center {
   text-align: center;
 }
@@ -11,17 +13,34 @@ body{
 .no-padding{
   padding: 0;
 }
-
-.half-margin{
-  margin-top: 50%;
+.center-vert{
+  text-align: center;
+  vertical-align: middle;
+  line-height: 300px;
 }
-
+.margin-bottom{
+  margin-bottom: 2%;
+}
 .no-margin{
   margin: 0 auto;
 }
-
-.cara{
-  height: 500px;
+.imgBox1{
+  min-height: 300px;
+  border: 1px solid black;
+  background-image: url(http://bgfons.com/upload/brick_texture3334.jpg);
+}
+.imgBox2{
+  min-height: 300px;
+  border: 1px solid black;
+  background-image: url(http://www.panicposters.com/media/catalog/product/cache/1/image/f63dc5ec28f3175f8a7f615bd217eb71/g/n/gn0430-world-map-antique-style.jpg);
+}
+.imgBox2 a, .imgBox1 a {
+  color: white;
+}
+.center-vert{
+  text-align: center;
+  vertical-align: middle;
+  line-height: 300px;
 }
 
 footer {
