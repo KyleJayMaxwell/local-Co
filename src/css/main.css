@@ -3,7 +3,9 @@ body{
   margin: 0 auto;
   background-color: slategrey;
 }
-
+h3{
+  margin-left: 3%;
+}
 .center {
   text-align: center;
 }
