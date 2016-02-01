@@ -11,7 +11,12 @@ $(document).ready(function(){
     var storeAddress = storeList[storeNames[i]]["address"];
     var storeWebsite = storeList[storeNames[i]]["website"];
     var storeContact = storeList[storeNames[i]]["contact"];
-    $("#boutiques").append("<h3 id='"+i+"'>"+storeKey+"</h3><ul><li>Year Founded: "+storeFounded+ "</li><li>Store Style: "+ storeStyle+"</li><li>Address: "+ storeAddress+"</li><li><a href='"+storeWebsite+"'>Website</a></li><li>Contact: "+storeContact+"</li>");
+    if (i%2 === 0){
+    $("#boutiquesleft").append("<h3 id='"+i+"'>"+storeKey+"</h3><ul class='info'><li>Year Founded: "+storeFounded+ "</li><li>Store Style: "+ storeStyle+"</li><li>Address: "+ storeAddress+"</li><li><a href='"+storeWebsite+"'>Website</a></li><li>Contact: "+storeContact+"</li>");
+  } else{
+    $("#boutiquesright").append("<h3 id='"+i+"'>"+storeKey+"</h3><ul class='info'><li>Year Founded: "+storeFounded+ "</li><li>Store Style: "+ storeStyle+"</li><li>Address: "+ storeAddress+"</li><li><a href='"+storeWebsite+"'>Website</a></li><li>Contact: "+storeContact+"</li>");
+  }
+
   }
 
 
@@ -173,6 +178,15 @@ var storeList = {
       "contact": "720.398.8064"
     },
 
+     "Topo Designs Boulder" : {
+      "style": "Active Wear",
+      "yearFounded": 2010,
+      "address": "935 Pearl Street, Boulder, CO 80302",
+      "city": "Boulder",
+      "website": "http://topodesigns.com/",
+      "contact": "720.255.2932"
+    },
+
      "Topo Designs Denver Flagship" : {
       "style": "Active Wear",
       "yearFounded": 2010,
@@ -189,15 +203,6 @@ var storeList = {
       "city": "Fort Collins",
       "website": "http://topodesigns.com/",
       "contact": "970.568.8628"
-    },
-
-     "Topo Designs Boulder" : {
-      "style": "Active Wear",
-      "yearFounded": 2010,
-      "address": "935 Pearl Street, Boulder, CO 80302",
-      "city": "Boulder",
-      "website": "http://topodesigns.com/",
-      "contact": "720.255.2932"
     },
 
      "Weekends Boulder" : {
