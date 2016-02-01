@@ -1,9 +1,17 @@
 /* add custom styles */
 body{
+  font-size: 20px;
   margin: 0 auto;
   background-color: slategrey;
 }
-
+h3{
+  margin-left: 3%;
+}
+.info{
+  list-style: none;
+  margin-left: 3%;
+  color: white;
+}
 .center {
   text-align: center;
 }
