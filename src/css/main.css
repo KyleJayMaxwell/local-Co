@@ -2,10 +2,16 @@
 body{
   font-size: 20px;
   margin: 0 auto;
+  padding: 0;
   background-color: slategrey;
+  max-width: 100%;
 }
 h3{
   margin-left: 3%;
+}
+.row, .container-fluid{
+  margin: 0;
+  padding: 0;
 }
 .info{
   list-style: none;
@@ -49,6 +55,16 @@ h3{
   text-align: center;
   vertical-align: middle;
   line-height: 300px;
+}
+#map-canvas{
+  min-height: 600px;
+  min-width: 100%;
+}
+#boutiquesright a{
+  color: #e68900;
+}
+#boutiquesleft a{
+  color: #e68900;
 }
 
 footer {

@@ -134,7 +134,7 @@ var storeList = {
     },
 
      "Players Clothing" : {
-      "style": "Gentlemen",
+      "style": "Lifestyle",
       "yearFounded": 2001,
       "address": "1501 Wazee Street, Denver, Colorado 80202",
       "city": "Denver",
