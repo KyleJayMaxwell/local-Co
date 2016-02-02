@@ -40,6 +40,7 @@ $(document).on('ready', function(){
       ['Armitage & McMillan', 39.757202, -105.008315],
       ['Axel\'s', 39.640907, -106.374441],
       ['Berkeley Supply', 39.774877, -105.044190],
+      ["Blackland Clothing Company", 40.521796, -105.060545],
       ['Family Affair', 39.753788, -104.991790],
       ['The Garment District', 39.669606, -104.941051],
       ['Jiberish', 39.757510, -105.007335],
@@ -48,8 +49,13 @@ $(document).on('ready', function(){
       ['Players Clothing', 39.750620, -105.001291],
       ['Soul Haus', 39.743384, -104.971299],
       ['Station', 39.755390, -104.977441],
-      ['Lawrence Covell', 39.720082, -104.950170],
-      ['Lawrence Covell', 39.720082, -104.950170],
+      ['Steadbrook', 39.715683, -104.987232],
+      ['Sully & Co', 39.753281, -105.023863],
+      ['Topo Designs Boulder', 40.017401, -105.283126],
+      ['Topo Designs Denver Flagship', 39.757709, -104.986164],
+      ['Topo Designs Fort Collins', 40.586244, -105.076525],
+      ['Weekends Boulder', 40.017774, -105.279765],
+      ['Winter Session', 39.757352, -104.974607]
     ];
 
     var marker, i;
