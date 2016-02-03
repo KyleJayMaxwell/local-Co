@@ -2,10 +2,19 @@
 body{
   font-size: 20px;
   margin: 0 auto;
+  padding: 0;
   background-color: slategrey;
+  max-width: 100%;
+}
+h1{
+  color: #e68900;
 }
 h3{
   margin-left: 3%;
+}
+.row, .container-fluid{
+  margin: 0;
+  padding: 0;
 }
 .info{
   list-style: none;
@@ -45,10 +54,19 @@ h3{
 .imgBox2 a, .imgBox1 a {
   color: white;
 }
-.center-vert{
-  text-align: center;
-  vertical-align: middle;
-  line-height: 300px;
+#map-canvas{
+  min-height: 500px;
+  max-width: 100%;
+}
+#boutiquesright a{
+  color: #e68900;
+}
+#boutiquesleft a{
+  color: #e68900;
+}
+#closeStores li{
+  margin: 10px;
+  color: white; 
 }
 
 footer {
