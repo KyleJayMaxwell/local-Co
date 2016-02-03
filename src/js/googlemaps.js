@@ -1,40 +1,30 @@
 $(document).on('ready', function(){
 
-  //map options
-  var options = {
-    center: {
-      lat: 37.773963,
-      lng: -122.426273
-    },
-    zoom: 11,
-  },
-  
-  element = document.getElementById('map-canvas');
-  //map itself
-
-  var map = new google.maps.Map(element, options);
-
-  // User location
-  var latLong = {
-    "url": "https://freegeoip.net/json/",
-    "method": "GET",
-  };
-
-  $.ajax(latLong).done(function (response) {
-    var userLat = response.latitude;
-    var userLon = response.longitude;
-    console.log(userLat,userLon);
-//re center for users location
-  var pos = {
-    lat: userLat,
-    lng: userLon
-  };
-
-    map.setCenter(pos);
+  var map = new google.maps.Map(document.getElementById('map-canvas'), {
+    center: {lat: 37.773963, lng: -122.426273},
+    zoom: 13
   });
 
-// pin address
+  initMap(map);
 
+});
+
+
+function initMap(map) {
+
+
+  navigator.geolocation.getCurrentPosition(function(position) {
+
+    var pos = {
+      lat: position.coords.latitude,
+      lng: position.coords.longitude
+    };
+
+    map.setCenter(pos);
+
+    // creating markers
+    var markers = [];
+    var marker;
     var locations = [
       ['Andrisen Morton', 39.720622, -104.950710],
       ['Armitage & McMillan', 39.757202, -105.008315],
@@ -58,10 +48,8 @@ $(document).on('ready', function(){
       ['Winter Session', 39.757352, -104.974607]
     ];
 
-    var marker, i;
-
     for (i = 0; i < locations.length; i++) {  
-      var marker = new google.maps.Marker({
+      marker = new google.maps.Marker({
         position: {
           lat: locations[i][1],
           lng: locations[i][2]
@@ -69,22 +57,38 @@ $(document).on('ready', function(){
         map: map,
         title: locations[i][0]
       });
+      markers.push(marker);
+    }
 
-      //   marker = new google.maps.Marker
-      //   position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-      //   map: map
-      // }
+    // drawing circle
+    search_area = {
+      strokeColor: '#FF0000',
+      strokeOpacity: 0.8,
+      strokeWeight: 2,
+      center : new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
+      radius : 2200
     };
 
+    search_area = new google.maps.Circle(search_area);
+    search_area.setMap(map);
 
-  // var jibLocation = new google.maps.Marker({
-  //   position: {
-  //     lat: 39.757750,
-  //     lng: -105.007347
-  //   },
-  //   map: map,
-  //   title: 'Jiberish'
-  // });
+    // finding markers inside circle
+    var bounds = search_area.getBounds();
+
+    var markersWithinBounds = markers.filter(function(marker){
+      return bounds.contains(marker.getPosition());
+    });
+
+    console.log(markersWithinBounds);
+    closestStores(markersWithinBounds);
 
 
-});
+  });
+
+}
+
+function closestStores(arr){
+  for(i=0;i<arr.length;i++){
+    $('#closeStores').append('<li>'+arr[i]["title"]+'</li>');
+  }
+}

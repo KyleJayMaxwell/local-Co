@@ -6,7 +6,6 @@ var uglify = require('gulp-uglify');
 var minifyCSS = require('gulp-minify-css');
 var clean = require('gulp-clean');
 var concat = require('gulp-concat');
-var sass = require('gulp-sass');
 var runSequence = require('run-sequence');
 
 
@@ -85,14 +84,4 @@ gulp.task('build', function() {
     ['copy-html-files'],
     ['connectDist']
   );
-});
-
-gulp.task('styles', function() {
-    gulp.src('sass/**/*.scss')
-        .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest('./css/'));
-});
-
-gulp.task('default',function() {
-    gulp.watch('sass/**/*.scss',['styles']);
 });
